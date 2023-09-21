@@ -1,10 +1,28 @@
 public class Personagem { //classe modelo, descrição, projeto
     //atributos ou propriedades
-    String nome;
-    int energia = 10;
-    int fome = 0;
-    int sono = 8;
-    //comportamentos (métodos, funcao)
+    private String nome;
+    private int energia = 10;
+    private int fome = 0;
+    private int sono = 0;
+
+    //construtor padrão: lista de parâmetros vazia
+    //Personagem(){   
+    //}
+    Personagem(String nome){   
+        this.nome = nome;
+    }
+
+    Personagem(String nome, int energia, int fome, int sono){   
+        this.nome = nome;
+        if(energia >=0 && energia <= 10)
+            this.energia = energia;
+        if(fome >= 0 && fome <= 10)    
+            this.fome = fome;
+        if(sono >= 0 && sono <= 10)
+            this.sono = sono;
+    }
+
+    //comportamentos (métodos)
     void cacar(){
         if(energia >= 2){
             System.out.println(nome + " Cacando...");
@@ -41,4 +59,10 @@ public class Personagem { //classe modelo, descrição, projeto
             System.out.println(nome + " Sem sono");
         }
     }
+
+void exibirEstado(){
+    System.out.printf("%s: energia: %d, fome: %d, sono: %d\n", nome, energia, fome, sono);
+    }
 }
+
+
