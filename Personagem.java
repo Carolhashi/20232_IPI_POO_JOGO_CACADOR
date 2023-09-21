@@ -13,15 +13,32 @@ public class Personagem { //classe modelo, descrição, projeto
         else{
             System.out.println(nome + "sem energia para cacar...");
         }
-        fome = Math.min(fome + 1, 10);
+        fome = Math.min(fome + 1, 10); //calcula o minimo entre 1 e 10
         sono = Math.min(sono + 1, 10);
     }
 
     void comer(){
-        System.out.println(nome + " Comendo...");
+        if(fome>=1){
+            System.out.println(nome + " Comendo...");
+
+            //operador ternário
+            energia = energia + 1 > 10 ? 10 : energia + 1; //mesma coisa que fome -= 1; 
+            energia = Math.min(energia + 1, 10);
+        }
+        else{
+            System.out.println(nome + "esta sem fome...");
+        }
+        
     }
 
     void dormir(){
-        System.out.println(nome + " Dormir...");
+        if(sono>=1){
+            System.out.println(nome + " Dormir...");
+            sono  -= 1;
+            energia  = Math.min(10, energia + 1);
+        }
+        else{
+            System.out.println(nome + " sem sono");
+        }
     }
 }
