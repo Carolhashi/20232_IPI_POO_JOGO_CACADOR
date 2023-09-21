@@ -1,9 +1,9 @@
 public class Personagem { //classe modelo, descrição, projeto
     //atributos ou propriedades
     String nome;
-    int energia;
-    int fome;
-    int sono;
+    int energia = 10;
+    int fome = 0;
+    int sono = 0;
     //comportamentos (métodos, funcao)
     void cacar(){
         if(energia >= 2){
@@ -11,7 +11,7 @@ public class Personagem { //classe modelo, descrição, projeto
             energia -= 2; //energia = energia -2;
         }
         else{
-            System.out.println(nome + "sem energia para cacar...");
+            System.out.println(nome + " sem energia para cacar...");
         }
         fome = Math.min(fome + 1, 10); //calcula o minimo entre 1 e 10
         sono = Math.min(sono + 1, 10);
@@ -26,19 +26,19 @@ public class Personagem { //classe modelo, descrição, projeto
             energia = Math.min(energia + 1, 10);
         }
         else{
-            System.out.println(nome + "esta sem fome...");
+            System.out.println(nome + " Esta sem fome...");
         }
         
     }
 
     void dormir(){
         if(sono>=1){
-            System.out.println(nome + " Dormir...");
+            System.out.println(nome + " Dormindo...");
             sono  -= 1;
             energia  = Math.min(10, energia + 1);
         }
         else{
-            System.out.println(nome + " sem sono");
+            System.out.println(nome + " Sem sono");
         }
     }
 }
