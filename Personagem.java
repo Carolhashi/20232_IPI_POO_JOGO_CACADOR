@@ -3,7 +3,7 @@ public class Personagem { //classe modelo, descrição, projeto
     String nome;
     int energia = 10;
     int fome = 0;
-    int sono = 0;
+    int sono = 8;
     //comportamentos (métodos, funcao)
     void cacar(){
         if(energia >= 2){
